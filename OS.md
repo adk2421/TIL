@@ -3,14 +3,18 @@
 # 운영체제(OS)
 운영체제(Operating System)란 하드웨어, 메모리, 디스크 등의 컴퓨터 시스템 자원들을 효율적으로 관리하여, 사용자가 컴퓨터를 편리하고 효과적으로 사용할 수 있도록 제공하는 시스템 소프트웨어입니다.
 
+<br>
+
 ## 1. 프로세스와 스레드
 ### 1-1. 프로세스
 프로세스(Process)란 실행중인 프로그램을 의미하며, 디스크로부터 메모리에 적재되어 CPU의 할당을 받을 수 있는 것을 말합니다.
 
-> #### 프로세스와 프로그램
-**프로그램**은 일반적으로 하드 디스크 등에 저장되어 있는 실행 코드를 뜻하고, **프로세스**는 프로그램을 구동하여 프로그램 자체와 프로그램의 상태가 메모리 상에서 실행되는 작업 단위를 지칭합니다.
+#### 프로세스와 프로그램
+> **프로그램**은 일반적으로 하드 디스크 등에 저장되어 있는 실행 코드를 뜻하고, **프로세스**는 프로그램을 구동하여 프로그램 자체와 프로그램의 상태가 메모리 상에서 실행되는 작업 단위를 지칭합니다.
 
 프로그램 자체는 생명이 없습니다. 프로그램은 보조 기억장치에 존재하며 실행되기를 기다리는 명령어와 정적인 데이터의 묶음입니다. 이 프로그램의 명령어와 정적 데이터가 자원을 할당받고 메모리에 적재되면 프로세스가 됩니다.
+
+<br>
 
 ### 1-2. 프로세스의 특징
 프로세스는 운영체제로부터 독립된 메모리 영역을 할당 받습니다.
@@ -20,19 +24,25 @@
 - CPU는 Code 영역에 저장된 명령어를 하나씩 가져가서 처리하게 됩니다.
 - 프로그램이 시작되고 종료될 때까지 메모리에 계속 남아 있습니다.
 - 읽기 전용 영역이기 때문에 프로세스가 함부로 변경할 수 없고 변경 시, 오류를 발생시킵니다.
+<br>
 
 > #### Data 영역
 - 프로그램이 실행될 때 할당되고, 프로그램이 종료되면 시스템에 반환됩니다.
 - 전역 변수, 정적(Static) 변수, 배열, 구조체 등이 저장됩니다.
 - Data 영역은 다시 Data(GVAR) 영역과 BSS 영역으로 나눌 수 있습니다.
-- 초기화된 데이터는 Data(GVAR) 영역에 저장되고 초기화되지 않은 데이터는 BSS 영역에 저장됩니다. <br>
+- 초기화된 데이터는 Data(GVAR) 영역에 저장되고 초기화되지 않은 데이터는 BSS 영역에 저장됩니다.
+
 `GVAR` : 전역 변수, 초기값 있는 전역 변수. 배열, static으로 선언된 변수가 들어갑니다.
+
 `BSS` : 전역 변수, 초기값 없는 전역변수. 배열, static으로 선언된 변수가 들어갑니다.
+
+<br>
 
 > #### Heap 영역
 - Heap 영역은 사용자에 의해 메모리 공간이 동적으로 할당되고 해제됩니다.
 - 사용자가 직접 관리할 수 있고, 그래야만 하는 메모리 영역입니다.
 - 메모리의 낮은 주소 -> 높은 주소 방향으로 할당됩니다.
+<br>
 
 > #### Stack 영역
 - 프로그램이 자동으로 사용하는 메모리 영역입니다.
@@ -40,11 +50,13 @@
 - Stack 영역은 후입선출(LIFO, Last-In First-Out) 방식이며, Push 동작으로 데이터를 저장하고, Pop 동작으로 데이터를 인출합니다.
 - 메모리의 높은 주소 -> 낮은 주소 방향으로 할당됩니다.
 
+<br>
+
 ### 1-3. 프로세스의 구성
 프로세스에 대한 정보는 **프로세스 제어블록(PCB, Process Control Block)** 또는 프로세스 기술자(Process Descriptor)라고 부르는 자료구조에 저장됩니다. `PCB`는 크게 다음과 같은 정보를 담고 있습니다.
 
 - PID
-> 운영체제가 각 프로세스를 식별하기 위해 부여된 **프로세스 식별번호(PID, Process IDentification)**입니다.
+> 운영체제가 각 프로세스를 식별하기 위해 부여된 **프로세스 식별번호(PID, Process IDentification)** 입니다.
 
 - 프로세스 상태
 > CPU는 프로세스를 빠르게 교체하면서 실행하기 때문에 실행 중인 프로세스, 대기 중인 프로세스 등 **프로세스의 상태**를 저장합니다
@@ -69,23 +81,30 @@
 - 실행 문맥
 > 프로세스가 실행 상태에서 마지막으로 실행한 프로세서의 레지스터 내용을 담고 있습니다. CPU에 의해 실행되는 프로세스는 운영체제에 의해 계속 교체되는데, 교체되었다가 다시 자신의 차례가 되어서 실행될 때 중단된 적 없고 마치 연속적으로 실행된 것처럼 하기 위해 이 레지스터 정보를 가지고 있습니다.
 
+<br>
+
 ### 1-4. 스레드
 스레드(Thread)란 어떠한 프로그램 내에서, 특히 프로세스 내에서 실행되는 흐름의 단위이다.
 
-
+<br>
 
 ### 참조
 - TCP School - 메모리의 구조
-http://www.tcpschool.com/c/c_memory_structure
+
+  http://www.tcpschool.com/c/c_memory_structure
 
 - Jbee - Tech Interview for Beginner, OS
-https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/OS#%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-%EC%8A%A4%EB%A0%88%EB%93%9C%EC%9D%98-%EC%B0%A8%EC%9D%B4
+
+  https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/OS#%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-%EC%8A%A4%EB%A0%88%EB%93%9C%EC%9D%98-%EC%B0%A8%EC%9D%B4
 
 - tjdghman.log - CS 정리 운영체제(1)
-https://velog.io/@tlatjdgh3778/CS-%EC%A0%95%EB%A6%AC-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C1
+
+  https://velog.io/@tlatjdgh3778/CS-%EC%A0%95%EB%A6%AC-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C1
 
 - bowbowbow - [운영체제] 프로세스가 뭐지?
-https://bowbowbow.tistory.com/16#%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EA%B0%80-%EB%AD%90%EC%A7%80
+
+  https://bowbowbow.tistory.com/16#%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EA%B0%80-%EB%AD%90%EC%A7%80
 
 - somedaycode.log - 프로세스와 스레드
-https://velog.io/@somedaycode/ProcessThread
+
+  https://velog.io/@somedaycode/ProcessThread
