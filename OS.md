@@ -1,5 +1,3 @@
-![](https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1120&q=80)
-
 # 운영체제(OS)
 운영체제(Operating System)란 하드웨어, 메모리, 디스크 등의 컴퓨터 시스템 자원들을 효율적으로 관리하여, 사용자가 컴퓨터를 편리하고 효과적으로 사용할 수 있도록 제공하는 시스템 소프트웨어입니다.
 
