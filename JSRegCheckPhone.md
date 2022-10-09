@@ -1,3 +1,5 @@
+# 자바스크립트 휴대폰 번호 유효성 검사
+
 - 숫자만 입력 가능 (정규식)
 ```
 function inputNumberOnly(param) {
