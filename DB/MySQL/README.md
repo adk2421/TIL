@@ -11,3 +11,7 @@
 - 크기가 큰 데이터 집합도 아주 빠르고 효과적으로 처리할 수 있습니다.
 - 널리 알려진 표준 SQL 형식을 사용합니다.
 - MySQL 응용 프로그램을 사용자의 용도에 맞게 수정할 수 있습니다.
+
+<br>
+
+참조 : TCP School - http://www.tcpschool.com/mysql/mysql_intro_intro
