@@ -1,0 +1,1 @@
+데이터 정의어 (DDL : Data Definition Language)
