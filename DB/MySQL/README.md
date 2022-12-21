@@ -14,4 +14,41 @@
 
 <br>
 
+# 기본 문법
+### MySQL 구문
+- 데이터베이스에 대한 작업 명령은 SQL 구문을 이용합니다.
+```sql
+SELECT [column] FROM [table];
+
+SELECT [column] FROM [table] WHERE [condition];
+```
+> 세미콜론(;)은 SQL 구문을 구분하는 기준이 됩니다.
+<br>
+
+- 키워드와 구문은 대소문자 구분을 하지 않습니다. (컬럼명과 테이블명은 대소문자를 구분하므로, 주의해야 합니다.)
+```sql
+1. SELECT SON FROM KOREA;
+
+2. select SON from KOREA;
+
+3. sElEcT SON fRoM KOREA;
+```
+> 모두 같은 결과가 나오지만, 되도록 1번이나 2번처럼 대소문자를 일관되게 사용하는 것이 좋습니다.
+<br>
+
+### MySQL 주석
+- 코드에 대한 설명이나 디버깅을 위해 작성하는 일종의 메모입니다.
+```sql
+1. # 한 줄 주석
+
+2. -- 한 줄 주석
+
+3. /* 두 줄
+      이상의
+      주석 */
+```
+> MySQL 서버는 주석을 무시하므로, 실제 실행 결과에는 아무런 영향을 주지 않습니다.
+
+<br>
+<hr>
 참조 : TCP School - http://www.tcpschool.com/mysql/mysql_intro_intro
