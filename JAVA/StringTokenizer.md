@@ -60,3 +60,8 @@ util
 .
 StringTokenizer stringTokenizer
 ```
+
+<br/>
+
+### 참조
+[Android Developers](https://developer.android.com/reference/java/util/StringTokenizer)
