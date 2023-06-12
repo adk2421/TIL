@@ -12,6 +12,12 @@ import java.util.StringTokenizer;
 <br/>
 
 ## 1. 생성
+- 기본
+```JAVA
+StringTokenizer(String str, String delim, boolean returnDelims) /* str(문자열), delim(구분문자), returnDelims(구분문자포함) */
+```
+
+<br/>
 
 - 객체 생성 시에 문자열만 입력했을 경우, 공백을 구분문자로 사용한다.
 ```JAVA
@@ -60,6 +66,20 @@ util
 .
 StringTokenizer stringTokenizer
 ```
+
+<br/>
+
+## 2. 메소드
+- 기본
+
+|메소드명|반환타입|설명|
+|-------|-------|----|
+|countTokens()|int|nextToken() 메소드 **호출 가능 횟수**를 반환|
+|hasMoreTokens()|boolean|사용 가능한 토큰이 남아있는지 확인|
+|hasMoreElements()|boolean|hasMoreTokens()와 동일|
+|nextToken()|String|다음 토큰을 반환|
+|nextToken(String delim)|String|구분문자를 포함하여 문자열을 재조합한 후, 입력한 구분문자로 다시 나눔|
+|nextElement()|Object|nextToken()과 동일|
 
 <br/>
 
