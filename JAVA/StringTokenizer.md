@@ -3,7 +3,7 @@
 
 <br/>
 
-클래스를 사용할 수 있게 import 한다.
+## 선언
 ```JAVA
 import java.util.StringTokenizer;
 
@@ -11,7 +11,7 @@ import java.util.StringTokenizer;
 
 <br/>
 
-## 1. 생성
+## 생성
 - 기본
 ```JAVA
 StringTokenizer(String str, String delim, boolean returnDelims) /* str(문자열), delim(구분문자), returnDelims(구분문자포함) */
@@ -69,7 +69,7 @@ StringTokenizer stringTokenizer
 
 <br/>
 
-## 2. 메소드
+## 메소드
 - 기본
 
 |메소드명|반환타입|설명|
@@ -78,7 +78,7 @@ StringTokenizer stringTokenizer
 |hasMoreTokens()|boolean|사용 가능한 토큰이 남아있는지 확인|
 |hasMoreElements()|boolean|hasMoreTokens()와 동일|
 |nextToken()|String|다음 토큰을 반환|
-|nextToken(String delim)|String|구분문자를 포함하여 문자열을 재조합한 후, 입력한 구분문자로 다시 나눔|
+|nextToken(String delim)|String|토큰화된 문자열을 구분문자까지 포함하여 재조합한 후, 입력한 구분문자로 다시 나눔|
 |nextElement()|Object|nextToken()과 동일|
 
 <br/>
